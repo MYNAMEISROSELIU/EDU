@@ -18,6 +18,7 @@ public class Deal extends JFrame implements ActionListener{
 	
 
 	public Deal(String str,String[] data){
+	
 		
 		index = Integer.parseInt(str);
 		obj = data[index];
@@ -27,7 +28,7 @@ public class Deal extends JFrame implements ActionListener{
 		
 		setSize(1300,1000);
 		//setLocation(500,400);
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setLayout(null);
 		
 		try{
@@ -72,6 +73,7 @@ public class Deal extends JFrame implements ActionListener{
 			button3.addActionListener(this);
 			add(button3);
 			
+			hint.setEditable(false);
 			hint.setBounds(1000,50,300,300);
 			add(hint);
 			

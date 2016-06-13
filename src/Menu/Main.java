@@ -18,7 +18,9 @@ public class Main {
 		String data = "";
 		String[] data2 ={};
 		
-		Save sa=new Save(1300,1000,0);
+		
+		Save sa=new Save(1300,1000,0);		
+		
 		control=sa.getM();
 
 		
@@ -65,10 +67,10 @@ public class Main {
 
 					//System.out.println(p1.result());
 					if(p1.result() == true){
-						Growing g = new Growing();
-						g.grow(1);
 						
-					}
+						Growing.grow(1);
+						
+					}else Growing.fail();
 					Thread.sleep(2000);
 					p1.close();
 
@@ -84,8 +86,8 @@ public class Main {
 					//System.out.println(p2.result());
 					if(p2.result() == true){
 
-						Growing g = new Growing();
-						g.grow(2);
+						
+						Growing.grow(2);
 					}
 					Thread.sleep(2000);
 					p2.close();
@@ -101,10 +103,11 @@ public class Main {
 
 					//System.out.println(p3.result());
 					if(p3.result() == true){
-						Growing g = new Growing();
-						g.grow(3);
+						
+						Growing.grow(3);
 						
 					}
+					else Growing.fail();
 					
 					Thread.sleep(2000);
 					p3.close();
@@ -198,10 +201,10 @@ public class Main {
 
 					System.out.println(p7.result());
 					if(p7.result() == true){
-						Growing g = new Growing();
-						g.grow(4);
 						
-					}
+						Growing.grow(4);
+						
+					}else Growing.fail();
 					Thread.sleep(2000);
 					p7.close();
 					
@@ -216,10 +219,10 @@ public class Main {
 
 					System.out.println(p8.result());
 					if(p8.result() == true){
-						Growing g = new Growing();
-						g.grow(5);
 						
-					}
+						Growing.grow(5);
+						
+					}else Growing.fail();
 					Thread.sleep(2000);
 					p8.close();
 					
@@ -234,10 +237,10 @@ public class Main {
 
 					System.out.println(p9.result());
 					if(p9.result() == true){
-						Growing g = new Growing();
-						g.grow(1);
 						
-					}
+						Growing.grow(1);
+						
+					}else Growing.fail();
 					Thread.sleep(500);
 
 					
@@ -251,10 +254,10 @@ public class Main {
 
 					System.out.println(p10.result());
 					if(p10.result() == true){
-						Growing g = new Growing();
-						g.grow(2);
 						
-					}
+						Growing.grow(2);
+						
+					}else Growing.fail();
 					Thread.sleep(500);
 
 					

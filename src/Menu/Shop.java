@@ -91,6 +91,9 @@ public class Shop extends JFrame implements ActionListener{
 			add(label2);
 			
 			JTextArea label3 = new JTextArea();
+			
+			label3.setEditable(false);
+			
 			label3.setText("NT100\n最普通的蛋\n");
 			label3.setFont(new Font("標楷體", Font.BOLD, 28));
 			label3.setBounds(10,700,300,300);
@@ -98,6 +101,9 @@ public class Shop extends JFrame implements ActionListener{
 			add(label3);
 			
 			JTextArea label4 = new JTextArea();
+			
+			label4.setEditable(false);
+			
 			label4.setText("NT300\n一定機率孵出超稀有\n寵物~~\n");
 			label4.setFont(new Font("標楷體", Font.BOLD, 28));
 			label4.setBounds(320,700,300,300);
@@ -105,6 +111,9 @@ public class Shop extends JFrame implements ActionListener{
 			add(label4);
 			
 			JTextArea label5 = new JTextArea();
+			
+			label5.setEditable(false);
+			
 			label5.setText("NT1000\n超高機率孵出超稀有\n寵物~~ˊˇˋ\n");
 			label5.setFont(new Font("標楷體", Font.BOLD, 28));
 			label5.setBounds(630,700,300,300);
@@ -112,6 +121,9 @@ public class Shop extends JFrame implements ActionListener{
 			add(label5);
 			
 			JTextArea label6 = new JTextArea();
+			
+			label6.setEditable(false);
+			
 			label6.setText("NT1000\n必定孵出獸族寵物的\n特殊蛋\n");
 			label6.setFont(new Font("標楷體", Font.BOLD, 28));
 			label6.setBounds(940,700,300,300);

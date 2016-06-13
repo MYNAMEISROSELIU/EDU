@@ -82,6 +82,17 @@ public class Save extends JFrame{
 		button3.setContentAreaFilled(false);
 		button3.setOpaque(false);
 		if(type==0)this.add(button3);
+		
+		JButton button4 = new JButton();
+		button4.setSize(300,90);
+		button4.setFont(new Font(Font.DIALOG,Font.BOLD ,32));
+		button4.setLocation(100,165);
+		button4.setIcon(new ImageIcon("img/help.jpg"));
+		button4.setActionCommand("help");
+		button4.addActionListener(new Click_on());
+		button4.setContentAreaFilled(false);
+		button4.setOpaque(false);
+		if(type==0)this.add(button4);
 			
 		name = new JTextField("", 30);
 		name.setLocation(100,15);
@@ -571,15 +582,26 @@ public class Save extends JFrame{
 					state=0;
 					loop=false;
 					break;
+					
+				case "help":
+					new Help();
+					
+					break;
+					
 				case "exist":
 					save(name.getText());
 					save_f.setVisible(false);
 					break;
 				
 				case "new":
+					if(name.getText().equals("")){
+					Mes m=new Mes("存檔失敗");
+					m.setVisible(true);
+					}else{
 					new_save(name.getText());
 					save_f.setVisible(false);
 					new_s.setVisible(false);
+					}
 					break;
 			
 			}
@@ -603,7 +625,7 @@ public class Save extends JFrame{
 			JPanel p= (JPanel)this.getContentPane();
 			p.setOpaque(false);
 			
-			this.setSize(150,100);
+			this.setSize(200,100);
 			lab.setText(str);
 			lab.setSize(150,100);
 			this.setLocation(500,400);

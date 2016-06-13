@@ -16,7 +16,7 @@ public class Ox extends Game implements ActionListener{
 
 
 	private ImageIcon em,img_o,img_x;
-	private int turn=0,winner=0;
+	private int turn=0,winner=2;
 	private int[] map={0,0,0,0,0,0,0,0,0};
 	JButton[] icon=new JButton[9];
 	
@@ -215,7 +215,10 @@ public class Ox extends Game implements ActionListener{
 	                running=false;
 	            }
 	        }
-	    if(turn>8)running=false;
+	    if(turn>8){
+	    	winner=0;
+	    	running=false;
+	    }
 	   // if(!running)this.close();
 		
 		

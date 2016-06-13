@@ -173,28 +173,28 @@ public class M extends JFrame implements ActionListener{
 			
 			
 			//buttons
-			icon = new ImageIcon(ImageIO.read(new File("img/cultivate.gif")));
+			icon = new ImageIcon(ImageIO.read(new File("img/cultivate.jpg")));
 			button1 = new JButton(icon);
 			button1.setBounds(750,100,300,90);
 			button1.setActionCommand("btn1");
 			button1.addActionListener(this);
 			add(button1);
 			
-			icon = new ImageIcon(ImageIO.read(new File("img/depositary.gif")));
+			icon = new ImageIcon(ImageIO.read(new File("img/depositary.jpg")));
 			JButton button2 = new JButton(icon);
 			button2.setBounds(750,250,300,90);
 			button2.setActionCommand("btn2");
 			button2.addActionListener(this);
 			add(button2);
 			
-			icon = new ImageIcon(ImageIO.read(new File("img/shop.gif")));
+			icon = new ImageIcon(ImageIO.read(new File("img/shop_b.jpg")));
 			JButton button3 = new JButton(icon);
 			button3.setBounds(750,400,300,90);
 			button3.setActionCommand("btn3");
 			button3.addActionListener(this);
 			add(button3);
 			
-			icon = new ImageIcon(ImageIO.read(new File("img/exit.gif")));
+			icon = new ImageIcon(ImageIO.read(new File("img/exit.jpg")));
 			JButton button4 = new JButton(icon);
 			button4.setBounds(750,700,300,90);
 			button4.setActionCommand("btn4");
@@ -214,6 +214,14 @@ public class M extends JFrame implements ActionListener{
 			button6.setActionCommand("btn6");
 			button6.addActionListener(this);
 			add(button6);
+			
+			JButton btn_h = new JButton(new ImageIcon("img/help_q.png"));
+			btn_h.setBounds(1200,0,75,75);
+			btn_h.setActionCommand("help");
+			btn_h.addActionListener(this);
+			btn_h.setContentAreaFilled(false);
+			btn_h.setBorderPainted(false);
+			add(btn_h);
 			
 			if(being == 0)	button6.setEnabled(false);
 			else	button6.setEnabled(true);
@@ -332,28 +340,28 @@ public class M extends JFrame implements ActionListener{
 			
 			
 			//buttons
-			icon = new ImageIcon(ImageIO.read(new File("img/cultivate.gif")));
+			icon = new ImageIcon(ImageIO.read(new File("img/cultivate.jpg")));
 			button1 = new JButton(icon);
 			button1.setBounds(750,100,300,90);
 			button1.setActionCommand("btn1");
 			button1.addActionListener(this);
 			add(button1);
 			
-			icon = new ImageIcon(ImageIO.read(new File("img/depositary.gif")));
+			icon = new ImageIcon(ImageIO.read(new File("img/depositary.jpg")));
 			JButton button2 = new JButton(icon);
 			button2.setBounds(750,250,300,90);
 			button2.setActionCommand("btn2");
 			button2.addActionListener(this);
 			add(button2);
 			
-			icon = new ImageIcon(ImageIO.read(new File("img/shop.gif")));
+			icon = new ImageIcon(ImageIO.read(new File("img/shop_b.jpg")));
 			JButton button3 = new JButton(icon);
 			button3.setBounds(750,400,300,90);
 			button3.setActionCommand("btn3");
 			button3.addActionListener(this);
 			add(button3);
 			
-			icon = new ImageIcon(ImageIO.read(new File("img/exit.gif")));
+			icon = new ImageIcon(ImageIO.read(new File("img/exit.jpg")));
 			JButton button4 = new JButton(icon);
 			button4.setBounds(750,700,300,90);
 			button4.setActionCommand("btn4");
@@ -378,7 +386,9 @@ public class M extends JFrame implements ActionListener{
 			else	button6.setEnabled(true);
 			
 			setVisible(true);
-
+			
+			scanner0.close();
+			scanner.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -406,12 +416,15 @@ public class M extends JFrame implements ActionListener{
         	flag = 6;
         	//this.dispose();
         }else if(cmd == "btn5"){
-       	  Save save=new Save(1300,1000,1);
+       	  new Save(1300,1000,1);
        	  flag=0;
        	  
        }
         else if(cmd == "btn6"){
         	new Born();
+        	
+        }else if(cmd == "help"){
+        	new Help();
         }else{
         	 System.exit(1);
         }

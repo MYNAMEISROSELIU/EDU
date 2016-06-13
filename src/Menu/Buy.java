@@ -18,6 +18,7 @@ public class Buy extends JFrame{
 	
 			JTextArea label1 = new JTextArea();
 			label1.setBounds(0,0,300,300);
+			label1.setEditable(false);
 			
 			Scanner scanner = new Scanner(new FileInputStream("bin/money.txt"));
 			int money = scanner.nextInt();

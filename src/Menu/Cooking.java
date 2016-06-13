@@ -319,9 +319,10 @@ public class Cooking extends Game implements ActionListener{
 						e.printStackTrace();
 					}
 					setLabel(i);
-					point = 1;
+//					point = 1;
 					}
 				point =0;
+				running=false;
 //			}//end of while
 		}//end of run
 
