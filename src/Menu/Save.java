@@ -6,17 +6,19 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
 import java.io.PrintWriter;
+import java.text.ParseException;
 import java.util.Scanner;
 
 
 import javax.swing.*;
+import javax.swing.text.MaskFormatter;
 
 
 public class Save extends JFrame{
 	private JFrame load_f,save_f,new_s,del_f;
 	private int state;
 	private boolean loop=true;
-	static JTextField name = new JTextField("", 30);
+	static JFormattedTextField name = new JFormattedTextField();
 	public Save(int s_x,int s_y,int type){
 		
 		ImageIcon img=new ImageIcon("img/main_b.jpg");
@@ -94,11 +96,18 @@ public class Save extends JFrame{
 		button4.setOpaque(false);
 		if(type==0)this.add(button4);
 			
-		name = new JTextField("", 30);
+		
+		try {
+			MaskFormatter mask=new MaskFormatter("******");
+			
+		name = new JFormattedTextField(mask);
 		name.setLocation(100,15);
 		name.setSize(300,50);
 		name.setFont(new Font(Font.DIALOG,Font.BOLD ,32));
-		
+		} catch (ParseException e) {
+			
+			e.printStackTrace();
+		}
 		
 		
 //		load_f.add(btn3);
@@ -170,6 +179,8 @@ public class Save extends JFrame{
 		
 		try{
 		Scanner scanner = new Scanner(new FileInputStream("bin/keep.txt"));
+		File f=new File("data/"+name+"/keep.txt");
+		//f.createNewFile();
 		PrintWriter pr=new PrintWriter(new FileOutputStream("data/"+name+"/keep.txt"));			
 		while (scanner.hasNext()){
 			pr.write(scanner.nextLine());
@@ -179,6 +190,8 @@ public class Save extends JFrame{
 		pr.flush();
 		pr.close();
 		scanner = new Scanner(new FileInputStream("bin/money.txt"));
+		f=new File("data/"+name+"/money.txt");
+		//f.createNewFile();
 		pr=new PrintWriter(new FileOutputStream("data/"+name+"/money.txt"));
 		while (scanner.hasNext()){
 			pr.write(scanner.nextLine());
@@ -188,6 +201,8 @@ public class Save extends JFrame{
 		pr.flush();
 		pr.close();
 		
+		f=new File("data/"+name+"/fill.txt");
+		//f.createNewFile();
 		scanner = new Scanner(new FileInputStream("bin/fill.txt"));
 		pr=new PrintWriter(new FileOutputStream("data/"+name+"/fill.txt"));			
 		while (scanner.hasNext()){
@@ -197,7 +212,8 @@ public class Save extends JFrame{
 		scanner.close();
 		pr.flush();
 		pr.close();
-		
+		f=new File("data/"+name+"/save.txt");
+		//f.createNewFile();
 		scanner = new Scanner(new FileInputStream("bin/save.txt"));
 		pr=new PrintWriter(new FileOutputStream("data/"+name+"/save.txt"));			
 		while (scanner.hasNext()){
@@ -319,7 +335,8 @@ public class Save extends JFrame{
 			 m=new M();
 			 break;
 		case 1:
-			m= new M(name.getText());
+			String str=name.getText().replaceAll(" ", "");
+			m= new M(str);
 			break;
 		default:
 			m=new M();
@@ -594,13 +611,15 @@ public class Save extends JFrame{
 					break;
 				
 				case "new":
-					if(name.getText().equals("")){
-					Mes m=new Mes("存檔失敗");
-					m.setVisible(true);
+					String str=name.getText().replaceAll(" ", "");
+					if(str.equals("")){
+						Mes m=new Mes("存檔失敗");
+						m.setVisible(true);
 					}else{
-					new_save(name.getText());
-					save_f.setVisible(false);
-					new_s.setVisible(false);
+						
+						new_save(str);
+						save_f.setVisible(false);
+						new_s.setVisible(false);
 					}
 					break;
 			
@@ -615,7 +634,7 @@ public class Save extends JFrame{
 	}
 	
 	
-	class Mes extends JFrame{
+	class Mes extends JDialog{
 		JLabel lab=new JLabel();
 		public Mes(String str){
 			ImageIcon img=new ImageIcon("img/main_b.jpg");

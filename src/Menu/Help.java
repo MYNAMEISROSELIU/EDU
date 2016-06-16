@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import javax.swing.*;
 
-public class Help extends JFrame{
+public class Help extends JDialog{
 	
 	public Help(){
 		this.setSize(500,500);
@@ -15,6 +15,13 @@ public class Help extends JFrame{
 		this.setAlwaysOnTop(true);
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.setLayout(null);
+		
+		ImageIcon img=new ImageIcon("img/help_b.jpg");
+		JLabel bg=new JLabel(img);
+		bg.setSize(500, 500);
+		this.getLayeredPane().add(bg,new Integer(Integer.MIN_VALUE));
+		JPanel p= (JPanel)this.getContentPane();
+		p.setOpaque(false);
 		
 		String str="";
 		try{

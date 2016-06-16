@@ -166,8 +166,8 @@ public class Depositary extends JFrame implements ActionListener{
 			scanner2.close();
 			scanner.close();
 			JButton menu = new JButton();
-			menu.setBounds(900, 800, 200, 100); //(x,y,width,height)
-			menu.setText("menu");
+			menu.setBounds(900, 700, 150, 150); //(x,y,width,height)
+			menu.setIcon(new ImageIcon("img/menu.jpg"));
 			
 			menu.setActionCommand("menu");
 			menu.addActionListener(this);

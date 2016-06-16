@@ -1,11 +1,10 @@
 package Menu;
-
+import Game.*;
 //import java.awt.event.*;
 
-import javax.imageio.ImageIO;
-import javax.print.attribute.standard.MediaSize.Other;
-import javax.swing.*;
-import java.awt.*;
+
+
+
 import java.io.*;
 import java.util.Scanner;
 
@@ -22,7 +21,7 @@ public class Main {
 		Save sa=new Save(1300,1000,0);		
 		
 		control=sa.getM();
-
+		control.setVisible(true);
 		
 		while(true){
 			try{
@@ -88,7 +87,8 @@ public class Main {
 
 						
 						Growing.grow(2);
-					}
+					}else Growing.fail();
+					
 					Thread.sleep(2000);
 					p2.close();
 					

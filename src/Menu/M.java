@@ -210,7 +210,8 @@ public class M extends JFrame implements ActionListener{
 
 			button6 = new JButton();
 			button6.setBounds(100,800,300,90);
-			button6.setText("孵化");
+//			button6.setText("孵化");
+			button6.setIcon(new ImageIcon("img/born.jpg"));
 			button6.setActionCommand("btn6");
 			button6.addActionListener(this);
 			add(button6);
@@ -226,7 +227,7 @@ public class M extends JFrame implements ActionListener{
 			if(being == 0)	button6.setEnabled(false);
 			else	button6.setEnabled(true);
 			
-			setVisible(true);
+//			setVisible(true);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -377,7 +378,8 @@ public class M extends JFrame implements ActionListener{
 
 			button6 = new JButton();
 			button6.setBounds(100,800,300,90);
-			button6.setText("孵化");
+//			button6.setText("孵化");
+			button6.setIcon(new ImageIcon("img/born.jpg"));
 			button6.setActionCommand("btn6");
 			button6.addActionListener(this);
 			add(button6);
@@ -385,7 +387,7 @@ public class M extends JFrame implements ActionListener{
 			if(being == 0)	button6.setEnabled(false);
 			else	button6.setEnabled(true);
 			
-			setVisible(true);
+//			setVisible(true);
 			
 			scanner0.close();
 			scanner.close();

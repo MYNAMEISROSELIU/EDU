@@ -2,9 +2,9 @@ package Menu;
 
 import java.awt.event.*;
 
-import javax.imageio.ImageIO;
+
 import javax.swing.*;
-import java.awt.*;
+
 import java.io.*;
 import java.util.Scanner;
 import java.util.Random;
@@ -30,7 +30,7 @@ public class Born extends JFrame implements ActionListener{
 			label2.setBounds(100, 0, 100, 100);
 			JLabel label3 = new JLabel(icon);
 			label3.setBounds(200, 0, 100, 100);
-			
+			hint.setEditable(false);
 			hint.setBounds(1000,50,300,300);
 			add(hint);
 			

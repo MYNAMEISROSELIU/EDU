@@ -69,7 +69,7 @@ public class Shop extends JFrame implements ActionListener{
 			
 			JButton button5 = new JButton();
 			button5.setBounds(1150, 0, 150, 150); //(x,y,width,height)
-			button5.setText("menu");
+			button5.setIcon(new ImageIcon("img/menu.jpg"));
 			button5.setActionCommand("menu");
 			button5.addActionListener(this);
 			add(button5);

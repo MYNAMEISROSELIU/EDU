@@ -13,7 +13,7 @@ public class Buy extends JFrame{
 		setLocation(500,400);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setLayout(null);
-		
+		this.setAlwaysOnTop(true);
 		try {
 	
 			JTextArea label1 = new JTextArea();
