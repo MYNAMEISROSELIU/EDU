@@ -27,17 +27,14 @@ public class Main {
 			try{
 				
 				if(flag == 0){
-					Thread.sleep(20);
-					Scanner scanner = new Scanner(new FileInputStream("bin/money.txt"));
-					String money = scanner.next();
-					control.setText(money);
-					scanner.close();
-					
+					Thread.sleep(20);					
+					control.setText();
 					flag = control.choose();
 				}
 				
 				if(flag == 1){
 //					control.dispose();
+					control.setText();
 					ChooseGame p = new ChooseGame();
 
 				    while(flag == 1){
@@ -63,7 +60,7 @@ public class Main {
 					
 					Ox p1 = new Ox();
 					p1.run();
-
+					control.setText();
 					//System.out.println(p1.result());
 					if(p1.result() == true){
 						
@@ -238,7 +235,7 @@ public class Main {
 					System.out.println(p9.result());
 					if(p9.result() == true){
 						
-						Growing.grow(1);
+						Growing.grow(0);
 						
 					}else Growing.fail();
 					Thread.sleep(500);
@@ -255,7 +252,7 @@ public class Main {
 					System.out.println(p10.result());
 					if(p10.result() == true){
 						
-						Growing.grow(2);
+						Growing.grow(6);
 						
 					}else Growing.fail();
 					Thread.sleep(500);

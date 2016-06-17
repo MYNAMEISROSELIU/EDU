@@ -1,5 +1,7 @@
 package Menu;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.*;
 //import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -15,10 +17,10 @@ public class Deal extends JFrame implements ActionListener{
 	String[] wb = new String[8]; 
 	JButton button1,button2,button3;
 	int flag = 0;
-	
+	Font font=new Font("標楷體",Font.BOLD ,25);
 
 	public Deal(String str,String[] data){
-	
+		hint.setFont(font);
 		
 		index = Integer.parseInt(str);
 		obj = data[index];
@@ -30,6 +32,7 @@ public class Deal extends JFrame implements ActionListener{
 		//setLocation(500,400);
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setLayout(null);
+		this.getContentPane().setBackground(Color.white);
 		
 		try{
 			Scanner scanner = new Scanner(new FileInputStream("bin/keep.txt"));
@@ -48,14 +51,14 @@ public class Deal extends JFrame implements ActionListener{
 			add(label);
 			
 			button1 = new JButton();
-			button1.setText("販賣");
+			button1.setIcon(new ImageIcon("img/sell.png"));
 			button1.setBounds(1000, 400, 250, 150);
 			button1.setActionCommand("sell");
 			button1.addActionListener(this);
 			add(button1);
 			
 			button2 = new JButton();
-			button2.setText("取出");
+			button2.setIcon(new ImageIcon("img/get.png"));
 			button2.setBounds(1000, 600, 250, 150);
 			button2.setActionCommand("outside");
 			button2.addActionListener(this);
@@ -67,7 +70,7 @@ public class Deal extends JFrame implements ActionListener{
 			}
 			
 			button3 = new JButton();
-			button3.setText("取消");
+			button3.setIcon(new ImageIcon("img/cancel.png"));
 			button3.setBounds(1000, 800, 250, 150);
 			button3.setActionCommand("cancel");
 			button3.addActionListener(this);
@@ -101,7 +104,7 @@ public class Deal extends JFrame implements ActionListener{
 				hint.setText("已售出\n獲得NT10");
 				button1.setEnabled(false);
 				button2.setEnabled(false);
-				button3.setText("離開");
+				button3.setIcon(new ImageIcon("img/exit_s.png"));
 				
 				try{
 					Scanner scanner = new Scanner(new FileInputStream("bin/money.txt"));
@@ -140,7 +143,7 @@ public class Deal extends JFrame implements ActionListener{
 				//System.out.println(obj.charAt(4));
 				button1.setEnabled(false);
 				button2.setEnabled(false);
-				button3.setText("離開");
+				button3.setIcon(new ImageIcon("img/exit_s.png"));
 				
 				int earn;
 				if(obj.charAt(4) == '1')	earn = 500;
@@ -188,7 +191,7 @@ public class Deal extends JFrame implements ActionListener{
 				hint.setText("已取出!");
 				button1.setEnabled(false);
 				button2.setEnabled(false);
-				button3.setText("離開");
+				button3.setIcon(new ImageIcon("img/exit_s.png"));
 				
 				try{
 					

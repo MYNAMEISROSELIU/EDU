@@ -19,6 +19,7 @@ public class M extends JFrame implements ActionListener{
 	JLabel label11 = new JLabel();
 	JLabel label12 = new JLabel();
 	JLabel label13 = new JLabel();
+	JLabel bg;
 	
 	JButton button1,button6;
 	
@@ -29,7 +30,7 @@ public class M extends JFrame implements ActionListener{
 		setLayout(null);
 		
 		ImageIcon img=new ImageIcon("img/main_b.jpg");
-		JLabel bg=new JLabel(img);
+		bg=new JLabel(img);
 		bg.setSize(1300, 1000);
 		this.getLayeredPane().add(bg,new Integer(Integer.MIN_VALUE));
 		JPanel p= (JPanel)this.getContentPane();
@@ -114,7 +115,7 @@ public class M extends JFrame implements ActionListener{
 			label3 = new JLabel();
 			label3.setText(money);
 			label3.setFont(new Font("標楷體", Font.BOLD, 48));
-			label3.setBounds(92,0,150,75);
+			label3.setBounds(92,0,300,75);
 			add(label3);
 			
 			icon = new ImageIcon(ImageIO.read(new File("img/1.png")));
@@ -242,7 +243,7 @@ public class M extends JFrame implements ActionListener{
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setLayout(null);
 		ImageIcon img=new ImageIcon("img/main_b.jpg");
-		JLabel bg=new JLabel(img);
+		bg=new JLabel(img);
 		bg.setSize(1300, 1000);
 		this.getLayeredPane().add(bg,new Integer(Integer.MIN_VALUE));
 		JPanel p= (JPanel)this.getContentPane();
@@ -286,7 +287,7 @@ public class M extends JFrame implements ActionListener{
 			label3 = new JLabel();
 			label3.setText(money);
 			label3.setFont(new Font("標楷體", Font.BOLD, 48));
-			label3.setBounds(92,0,150,75);
+			label3.setBounds(92,0,300,75);
 			add(label3);
 			
 			
@@ -444,8 +445,8 @@ public class M extends JFrame implements ActionListener{
 		flag=0;
 	}
 	
-	public void setText(String str){
-		label3.setText(str);
+	public void setText(){
+		
 		try{
 		Scanner scanner0 = new Scanner(new FileInputStream("bin/keep.txt"));
 		int being = scanner0.nextInt();
@@ -456,11 +457,40 @@ public class M extends JFrame implements ActionListener{
 		int d4 = scanner0.nextInt();
 		int d5 = scanner0.nextInt();
 		scanner0.close();
-		
+		Scanner scanner = new Scanner(new FileInputStream("bin/money.txt"));
+		String str = scanner.next();
+		scanner.close();
 		//labels
 	//	Image img ;// ImageIO.read (new File("img/egg5.png"));
 		ImageIcon icon ;// new ImageIcon(img);
 		//JLabel label1 ;//= new JLabel(icon);
+		label3.setText(str);
+		int m=Integer.valueOf(str);
+		int cl=0;
+		if(m>100000){
+			cl=2;
+		}
+		else if(m>50000){
+			cl=3;
+		}
+		else if(m>10000){
+			cl=1;
+		}else cl=0;
+
+		switch (cl) {
+		case 1:
+			bg.setIcon(new ImageIcon("img/farm.png"));
+			break;
+		case 2:
+			bg.setIcon(new ImageIcon("img/palace.png"));
+			break;
+		case 3:
+			bg.setIcon(new ImageIcon("img/sky.png"));
+			break;
+		default:
+			bg.setIcon(new ImageIcon("img/main_b.jpg"));
+			break;
+		}
 		
 		if(being == 1){
 			//img = ImageIO.read (new File("img/egg" + which + ".png"));

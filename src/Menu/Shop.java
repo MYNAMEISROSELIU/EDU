@@ -7,7 +7,7 @@ import java.awt.*;
 import java.io.*;
 import java.util.Scanner;
 
-public class Shop extends JFrame implements ActionListener{
+public class Shop extends JDialog implements ActionListener{
 	
 	JLabel label2;
 	int flag = 0;
@@ -87,7 +87,7 @@ public class Shop extends JFrame implements ActionListener{
 			label2 = new JLabel();
 			label2.setText(money);
 			label2.setFont(new Font("標楷體", Font.BOLD, 48));
-			label2.setBounds(92,0,150,75);
+			label2.setBounds(92,0,300,75);
 			add(label2);
 			
 			JTextArea label3 = new JTextArea();

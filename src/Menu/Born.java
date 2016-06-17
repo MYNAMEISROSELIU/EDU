@@ -1,5 +1,7 @@
 package Menu;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.*;
 
 
@@ -14,12 +16,13 @@ public class Born extends JFrame implements ActionListener{
 	JTextArea hint = new JTextArea();
 	int get = 0;
 	JButton button1,button2,button3;
-	
+	Font font=new Font("標楷體",Font.BOLD ,25);
 	public Born(){
 		setSize(1300,1000);
+		hint.setFont(font);
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setLayout(null);
-		
+		this.getContentPane().setBackground(Color.white);
 		try{
 			//Image img = ImageIO.read (new File("img/star.png"));
 			ImageIcon icon = new ImageIcon("img/star.png");
@@ -35,21 +38,24 @@ public class Born extends JFrame implements ActionListener{
 			add(hint);
 			
 			button1 = new JButton();
-			button1.setText("販賣");
+//			button1.setText("販賣");
+			button1.setIcon(new ImageIcon("img/sell.png"));
 			button1.setBounds(1000, 400, 250, 150);
 			button1.setActionCommand("btn1");
 			button1.addActionListener(this);
 			add(button1);
 			
 			button2 = new JButton();
-			button2.setText("放入倉庫");
+//			button2.setText("放入倉庫");
+			button2.setIcon(new ImageIcon("img/put.png"));
 			button2.setBounds(1000, 600, 250, 150);
 			button2.setActionCommand("btn2");
 			button2.addActionListener(this);
 			add(button2);
 			
 			button3 = new JButton();
-			button3.setText("離開");
+//			button3.setText("離開");
+			button3.setIcon(new ImageIcon("img/exit_s.png"));
 			button3.setBounds(1000, 800, 250, 150);
 			button3.setActionCommand("btn3");
 			button3.addActionListener(this);

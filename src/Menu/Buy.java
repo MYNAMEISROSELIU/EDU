@@ -3,22 +3,29 @@ package Menu;
 //import java.awt.event.*;
 //import javax.imageio.ImageIO;
 import javax.swing.*;
+
+import java.awt.Color;
+import java.awt.Font;
 //import java.awt.*;
 import java.io.*;
 import java.util.Scanner;
 
-public class Buy extends JFrame{
+public class Buy extends JDialog{
+	
 	public Buy(int num){
+		Font font=new Font("標楷體",Font.BOLD ,20);
 		setSize(300,300);
 		setLocation(500,400);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setLayout(null);
+		this.getContentPane().setBackground(Color.white);
 		this.setAlwaysOnTop(true);
 		try {
-	
+			
 			JTextArea label1 = new JTextArea();
 			label1.setBounds(0,0,300,300);
 			label1.setEditable(false);
+			label1.setFont(font);
 			
 			Scanner scanner = new Scanner(new FileInputStream("bin/money.txt"));
 			int money = scanner.nextInt();

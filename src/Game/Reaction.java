@@ -16,7 +16,7 @@ public class Reaction extends Game implements ActionListener{
 	private ImageIcon type1,type2,type3;
 	private JLabel score_v=new JLabel(),time_v=new JLabel();
 	private JButton[] point=new JButton[10];
-	private int score=0,time=30,target=120;
+	private int score=0,time=30,target=80;
 
 	public Reaction (){
 		this.name="Reaction";
